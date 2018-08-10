@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <link href='https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Material+Icons' rel="stylesheet">
+  <link href="css/vuetify.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="css/main.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, minimal-ui">
+  <title>Vue.js & Vuetify.js Mockup</title>
+</head>
+
+<body>
+  <div id="App">
+    <v-app>
+      <!-- Start Mock Layout -->
+      <v-content>
+        <v-container grid-list-sm>
+          <!-- Start Vuetify flexbox row -->
+          <v-layout row wrap>
+            <v-flex xs12>
+              <v-card class="light-blue darken-4">
+                <v-card-text class="px-3 white--text">
+                  <span><h1>Header</h1>Minimal width 600px. Stacks at lower screen sizes.</span>
+                  <h3>Vue.js - Vuetify.js flexbox test.</h3>
+                </v-card-text>
+              </v-card>
+            </v-flex>
+          </v-layout>
+          <!-- End Vuetify flexbox row -->
+          <!-- Start Vuetify flexbox row -->
+          <v-layout row wrap>
+            <v-flex sm3 v-for="i in 1">
+              <v-card class="light-blue darken-1">
+                <v-card-text class="px-2">
+                  <!-- Start navigation -->
+                  <v-list class="pt-0 light-blue darken-1 white--text">
+                    <v-list-tile v-for="item in items" :key="item.title">
+                      <!-- <v-list-tile-action>
+                          <v-icon class="">{{ item.icon }}</v-icon>
+                        </v-list-tile-action> -->
+                      <v-list-tile-content>
+                        <v-list-tile-title>
+                          <a v-bind:href="item.lnk" class="white--text">{{ item.title }}</a>
+                        </v-list-tile-title>
+                      </v-list-tile-content>
+                    </v-list-tile>
+                  </v-list>
+                  <!-- End navigation -->
+                </v-card-text>
+              </v-card>
+            </v-flex>
+            <v-flex sm9 v-for="i in 1">
+              <v-card class="light-blue darken-1">
+                <v-card-text class="px-2 white--text">
+                  <h2>Article</h2>
+                  <p>Content is not fixed to adjacent column height. <br><br> {{ lorem.slice(0, 258)}} {{ lorem.slice(0, 258)}}
+                  </p>
+                </v-card-text>
+              </v-card>
+            </v-flex>
+          </v-layout>
+          <!-- End Vuetify flexbox row -->
+          <!-- Start Vuetify flexbox row -->
+          <v-layout row wrap>
+            <v-flex sm6 v-for="i in 1">
+              <v-card column class="light-blue lighten-2">
+                <v-card-text class="px-2 white--text">
+                  <span><h3>Content</h3>Compresses then wraps.<br><br>
+                    {{ lorem.slice(0, 258) }}
+                  </span>
+                </v-card-text>
+              </v-card>
+            </v-flex>
+            <v-flex sm6 v-for="i in 1">
+              <v-card column class="light-blue lighten-2">
+                <v-card-text class="px-2 white--text">
+                  <span><h3>Content</h3>Compresses then wraps.<br><br>
+                    {{ lorem.slice(0, 258) }}
+                  </span>
+                </v-card-text>
+              </v-card>
+            </v-flex>
+          </v-layout>
+          <!-- End Vuetify flexbox row -->
+          <!-- Start Vuetify flexbox row -->
+          <v-layout row wrap>
+            <v-flex xs12>
+              <v-card class="light-blue darken-4">
+                <v-card-text class="px-3 white--text text-xs-center">
+                  <!-- Start navigation -->
+                  <div v-for="item in items" :key="item.title" class="footLnk">
+                    <a v-bind:href="item.lnk" class="white--text">
+                        <span>{{ item.title }}</span>
+                      </a>
+                  </div>
+                  <!-- End navigation -->
+                </v-card-text>
+              </v-card>
+            </v-flex>
+          </v-layout>
+          <!-- End Vuetify flexbox row -->
+        </v-container>
+      </v-content>
+      <!-- End Mock Layout -->
+      <br><br><br>
+      <!-- Start test column sets -->
+      <v-content>
+        <v-container grid-list-md>
+          <!-- Start Vuetify flexbox row -->
+          <v-layout row wrap>
+            <v-flex xs12>
+              <v-card class="amber darken-4">
+                <v-card-text class="px-3 white--text">
+                  <h1>{{ hello1 }}</h1>
+                  <h3>Vue.js - Vuetify.js flexbox test.</h3>
+                  <p>12 col</p>
+                  <p>3 pad</p>
+                  <p>{{ lorem.slice(0, 258) }} {{ lorem.slice(0, 258) }}</p>
+                </v-card-text>
+              </v-card>
+            </v-flex>
+          </v-layout>
+          <!-- End Vuetify flexbox row -->
+          <!-- Start Vuetify flexbox row -->
+          <v-layout row wrap>
+            <v-flex xs6 v-for="i in 2">
+              <v-card class="amber darken-3">
+                <v-card-text class="px-3 white--text">
+                  <h2>{{ hello2 }}</h2>
+                  <p>6 col</p>
+                  <p>3 pad</p>
+                  <p>{{ lorem.slice(0, 209) }}</p>
+                </v-card-text>
+              </v-card>
+            </v-flex>
+          </v-layout>
+          <!-- End Vuetify flexbox row -->
+          <!-- Start Vuetify flexbox row -->
+          <v-layout row wrap>
+            <v-flex xs4 v-for="i in 3">
+              <v-card class="amber darken-1">
+                <v-card-text class="px-3 white--text">
+                  <h3>{{ hello3 }}</h3>
+                  <p>3 col</p>
+                  <p>3 pad</p>
+                  <p>{{ lorem.slice(0, 148) }}</p>
+                </v-card-text>
+              </v-card>
+            </v-flex>
+          </v-layout>
+          <!-- End Vuetify flexbox row -->
+          <!-- Start Vuetify flexbox row -->
+          <v-layout row wrap>
+            <v-flex xs3 v-for="i in 4">
+              <v-card class="amber lighten-2">
+                <v-card-text class="px-3 white--text">
+                  <h4>{{ hello4 }}</h4>
+                  <p>4 col</p>
+                  <p>3 pad</p>
+                  <p>{{ lorem.slice(0, 79) }}</p>
+                </v-card-text>
+              </v-card>
+            </v-flex>
+          </v-layout>
+          <!-- End Vuetify flexbox row -->
+          <!-- Start Vuetify flexbox row -->
+          <v-layout row wrap>
+            <v-flex xs2 v-for="i in 6">
+              <v-card class="amber darken-3">
+                <v-card-text class="px-2 white--text">
+                  <h5>{{ hello5 }}</h5>
+                  <p>6 col</p>
+                  <p>2 pad</p>
+                  <p>{{ lorem.slice(0, 48) }}</p>
+                </v-card-text>
+              </v-card>
+            </v-flex>
+          </v-layout>
+          <!-- End Vuetify flexbox row -->
+          <!-- Start Vuetify flexbox row -->
+          <v-layout row wrap>
+            <v-flex xs1 v-for="i in 12">
+              <v-card class="amber darken-4">
+                <v-card-text class="px-2 white--text">
+                  <h6>{{ smHello }}</h6>
+                  <p>12 col</p>
+                  <p>2 pad</p>
+                  <p>{{ lorem.slice(0, 18) }}</p>
+                </v-card-text>
+              </v-card>
+            </v-flex>
+          </v-layout>
+          <!-- End Vuetify flexbox row -->
+        </v-container>
+      </v-content>
+      <!-- End test column sets -->
+    </v-app>
+  </div>
+  <!-- Scripts -->
+  <script src="js/vue.js"></script>
+  <script src="js/vuetify.js"></script>
+  <script>
+    new Vue({
+      el: '#App',
+      data() {
+        return {
+          hello1: 'Hello Spaceman!',
+          hello2: 'Hello Spacewoman!',
+          hello3: 'Hello Spacegirl!',
+          hello4: 'Hello Spaceboy!',
+          hello5: 'Hello Spacedog!',
+          smHello: 'Hi! You!',
+          items: [{
+              title: 'Home',
+              lnk: "#home",
+              icon: 'dashboard'
+            },
+            {
+              title: 'About',
+              lnk: "#about",
+              icon: 'question_answer'
+            },
+
+            {
+              title: 'Blog',
+              lnk: "#blog",
+              icon: 'null'
+            },
+
+            {
+              title: 'Contact',
+              lnk: "#contact",
+              icon: 'email'
+            },
+            {
+              title: 'Account',
+              lnk: "#account",
+              icon: 'account_box'
+            },
+            {
+              title: 'Admin ',
+              lnk: "#admin",
+              icon: 'gavel'
+            }
+          ],
+          right: null,
+          lorem: `Lorem ipsum dolor sit amet, mel at clita quando. Te sit oratio vituperatoribus, nam ad ipsum posidonium mediocritatem, explicari dissentiunt cu mea. Repudiare disputationi vim in, mollis iriure nec cu, alienum argumentum ius ad. Pri eu justo aeque torquatos.`,
+        }
+      }
+    })
+  </script>
+</body>
+
+</html>
